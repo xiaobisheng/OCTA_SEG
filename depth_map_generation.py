@@ -3,7 +3,7 @@ import cv2
 import numpy as np
 import open3d as o3d
 
-root_path = '/Users/bishengwang/Desktop/WORK/medical_segmentation/Data/OCTA_6mm/Projection Maps'
+root_path = './Data/OCTA_6mm/Projection Maps'
 def generate_depth_maps(data, i, threshold=10):
     data = data.transpose(2, 1, 0)
 
@@ -22,8 +22,8 @@ def generate_depth_maps(data, i, threshold=10):
 
     # DCIM
     data_ = data.transpose(0, 2, 1)
-    indices = np.tile(np.arange(data_.shape[2]), (data_.shape[0], data_.shape[1], 1))  # 生成形状为 (W, H, C) 的通道索引矩阵
-    valid_indices = np.where(data_ > threshold, indices, 0)  # 仅保留大于0的索引，其他填充 NaN
+    indices = np.tile(np.arange(data_.shape[2]), (data_.shape[0], data_.shape[1], 1))  # generate the channel index matrix, (W, H, C)
+    valid_indices = np.where(data_ > threshold, indices, 0)  
     output_dcim = np.sum(valid_indices, axis=2)
     num = np.sum(data_ > threshold, axis=2) + 0.01
     output_dcim = output_dcim / num
@@ -36,15 +36,15 @@ def generate_depth_maps(data, i, threshold=10):
 def visualize_3d(data):
     data = data[:, :, :] * 3
     W, H, C = data.shape
-    threshold = 25  # 设定一个阈值，忽略低强度点
-    coords = np.argwhere(data > threshold)  # 只取灰度值大于5的点
+    threshold = 25  # setting a threshold for ignoring low intensity voxel
+    coords = np.argwhere(data > threshold)  # only choose voxel > threshold
     colors = data[coords[:, 0], coords[:, 1], coords[:, 2]]
-    colors = np.tile(colors[:, None], (1, 3)) / 255.0  # 归一化为RGB
-    # 创建 Open3D 点云对象
+    colors = np.tile(colors[:, None], (1, 3)) / 255.0  # normalization
+    # create Open3D point cloud object
     pcd = o3d.geometry.PointCloud()
-    pcd.points = o3d.utility.Vector3dVector(coords)  # 设置点坐标
-    pcd.colors = o3d.utility.Vector3dVector(colors)  # 设置颜色（灰度）
-    # 可视化
+    pcd.points = o3d.utility.Vector3dVector(coords)  # setting coordinates
+    pcd.colors = o3d.utility.Vector3dVector(colors)  # setting color (gray)
+    # visualization
     o3d.visualization.draw_geometries([pcd])
 
 if __name__ == '__main__':
