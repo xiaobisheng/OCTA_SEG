@@ -19,7 +19,7 @@ https://github.com/rishikksh20/ResUnet
 
 https://github.com/Andy-zhujunwen/UNET-ZOO
 
-learning rate scheduler codes arefrom: https://github.com/sooftware/pytorch-lr-scheduler/tree/main
+learning rate scheduler codes are from: https://github.com/sooftware/pytorch-lr-scheduler/tree/main
 
 ## Depth Enhanced Cascaded Framework for OCTA Segmentation
 
