@@ -10,6 +10,8 @@ depth_map_generation.py: This file visualizes the 3D data using open3d and gener
 ## Baseline methods
 A few popular methods are collected and implemented.
 Codes for this part are mostly from te following sources:
+
 https://github.com/chaosallen/IPNV2_pytorch
+
 https://github.com/milesial/Pytorch-UNet
 
