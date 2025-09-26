@@ -6,3 +6,10 @@ We use OCTA-500 dataset, please find the dataset here: https://ieee-dataport.org
 
 ## Data processing
 depth_map_generation.py: This file visualizes the 3D data using open3d and generates DCCM and DCIM.
+
+## Baseline methods
+A few popular methods are collected and implemented.
+Codes for this part are mostly from te following sources:
+https://github.com/chaosallen/IPNV2_pytorch
+https://github.com/milesial/Pytorch-UNet
+
