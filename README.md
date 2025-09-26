@@ -20,3 +20,7 @@ https://github.com/rishikksh20/ResUnet
 https://github.com/Andy-zhujunwen/UNET-ZOO
 
 https://github.com/sooftware/pytorch-lr-scheduler/tree/main
+
+## Depth Enhanced Cascaded Framework for OCTA Segmentation
+
+OCTA_2D is the code for 'Depth Enhanced Cascaded Framework for OCTA Segmentation'
