@@ -15,3 +15,5 @@ https://github.com/chaosallen/IPNV2_pytorch
 
 https://github.com/milesial/Pytorch-UNet
 
+https://github.com/rishikksh20/ResUnet
+
