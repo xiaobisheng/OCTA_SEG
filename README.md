@@ -19,3 +19,4 @@ https://github.com/rishikksh20/ResUnet
 
 https://github.com/Andy-zhujunwen/UNET-ZOO
 
+https://github.com/sooftware/pytorch-lr-scheduler/tree/main
